@@ -1,4 +1,3 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
 module.exports = {
   module: {
     rules: [
@@ -11,13 +10,12 @@ module.exports = {
       } 
     ]
   },
-  plugins: [
-    new HtmlWebPackPlugin({
-      template: "./src/index.html",
-      filename: "./index.html"
-    })
-  ],
+  entry: {
+    options: './src/js/options.js',
+    contents: './src/js/contents.js'
+  },
   output: {
+    filename: '[name].js',
     path: __dirname + '/extension/src',
   }
 };
